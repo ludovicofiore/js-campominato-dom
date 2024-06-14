@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* titolo */
+header {
+    height: 100px;
+    background-color: aquamarine;
+    text-align: center;
+    line-height: 2.5;
+}
+
+main {
+    background-color: rgb(1, 22, 38);
+    padding: 60px 0;
+    color: white;
+}
+
+
+/* pulsante */
+.play-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#select-mode {
+    display: inline-block;
+    margin: 20px 0;
+    
+}
+
+.play-button {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: aquamarine;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 20px;
+}
+
+/* caselle */
+.big-square {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    border: 3px solid white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    border: 3px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.easy-square {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.mid-square {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.hard-square {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.clicked {
+    background-color: aquamarine;
+}
