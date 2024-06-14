@@ -21,8 +21,8 @@ myButton.addEventListener("click",
         container.append(bigSquare);
 
         // creo array con numeri delle bombe
-        const bombNumbers = createRandomNumArray(1, 100, 16);
-        console.log(bombNumbers);
+        const bombsArray = createRandomNumArray(1, 100, 16);
+        console.log(bombsArray);
 
         // creo caselle square
         // creo ciclo per le 100 caselle
@@ -36,7 +36,7 @@ myButton.addEventListener("click",
 
             // scrivo il numero relativo della casella
             littleSquare.innerHTML = i;
-
+            
 
             // creo click event per quando viene cliccata una casella
 
@@ -48,6 +48,18 @@ myButton.addEventListener("click",
 
                     // mostro il numero della casella in console
                     console.log("numero casella: ", i);
+
+                    // creo ciclo per estrapolare valori array bombe
+                    for (let index = 0; index < bombsArray.length; index++) {
+            
+                        let bombNumbers = bombsArray[index];
+                        console.log(bombNumbers);
+
+                        // assegno le caselle bomba
+                        if (i === bombNumbers) {
+                            littleSquare.innerHTML = "bomba" //DEBUG
+                        }
+                    }
                     
 
                 }
