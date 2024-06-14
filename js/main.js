@@ -1,3 +1,6 @@
+// dichiaro variabile per punteggio
+let score = 0;
+
 
 // creo click event per generare griglia
 
@@ -49,8 +52,12 @@ myButton.addEventListener("click",
                     // mostro il numero della casella in console
                     console.log("numero casella: ", i);
 
-                    // richiamo ccontenitore risultato
+                    // richiamo contenitore risultato
                     let result = document.querySelector(".result-container");
+
+                    // incremento punteggio per ogni click
+                    score++;
+                    console.log(score);
 
                     // creo ciclo per estrapolare valori array bombe
                     for (let index = 0; index < bombsArray.length; index++) {
@@ -58,7 +65,7 @@ myButton.addEventListener("click",
                         let bombNumbers = bombsArray[index];
                         
 
-                        // assegno le caselle bomba
+                        // assegno le caselle bomba e condizione giocatore perdente
                         if (i === bombNumbers) {
                             littleSquare.classList.add("bomb");
 
@@ -66,9 +73,22 @@ myButton.addEventListener("click",
                             let resultLoss = createElementWClass("h2", "title");
                             result.append(resultLoss);
 
-                            // aggiungo contenuto
-                            resultLoss.innerHTML = "Hai perso";
+                            // aggiungo contenuto e mostro punteggio
+                            resultLoss.innerHTML = "Hai perso, il tuo punteggio è: " + (score - 1);
+
                         }
+                        
+                    }
+
+                    // condizione se giocatore vince 
+                    if (score === 84) {
+
+                        // creo elemento per comunicare risultato
+                        let resultWin = createElementWClass("h2", "title");
+                        result.append(resultWin);
+
+                        // aggiungo contenuto e mostro messaggio
+                        resultWin.innerHTML = "Hai vinto, il tuo punteggio è: " + score;
                     }
                     
 
