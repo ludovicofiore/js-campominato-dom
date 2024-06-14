@@ -36,7 +36,7 @@ myButton.addEventListener("click",
 
             // scrivo il numero relativo della casella
             littleSquare.innerHTML = i;
-            
+
 
             // creo click event per quando viene cliccata una casella
 
@@ -49,15 +49,25 @@ myButton.addEventListener("click",
                     // mostro il numero della casella in console
                     console.log("numero casella: ", i);
 
+                    // richiamo ccontenitore risultato
+                    let result = document.querySelector(".result-container");
+
                     // creo ciclo per estrapolare valori array bombe
                     for (let index = 0; index < bombsArray.length; index++) {
             
                         let bombNumbers = bombsArray[index];
-                        console.log(bombNumbers);
+                        
 
                         // assegno le caselle bomba
                         if (i === bombNumbers) {
-                            littleSquare.innerHTML = "bomba" //DEBUG
+                            littleSquare.classList.add("bomb");
+
+                            // creo elemeto per comunicare risultato
+                            let resultLoss = createElementWClass("h2", "title");
+                            result.append(resultLoss);
+
+                            // aggiungo contenuto
+                            resultLoss.innerHTML = "Hai perso";
                         }
                     }
                     
@@ -113,4 +123,3 @@ function createRandomNumArray (min, max, arrayLenght) {
     return randomArray
 }
 
-// devo generare 16 numeri casuali da uno a 100 e inserirli nella rispettiva casella 

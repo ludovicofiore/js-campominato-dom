@@ -66,3 +66,13 @@ main {
 .clicked {
     background-color: aquamarine;
 }
+
+.bomb {
+    background-color: red;
+}
+
+/* risultati */
+.title {
+    text-align: center;
+    margin: 50px 0;
+}
