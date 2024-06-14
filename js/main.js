@@ -11,12 +11,18 @@ myButton.addEventListener("click",
         // richiamo contenitore
         const container = document.querySelector(".square-container");
 
+        // per creare una sola griglia
+        container.innerHTML = '';
+
         // richiamo funzione per creare elemento
         const bigSquare = createElementWClass("div", "big-square");
-        console.log(bigSquare);
 
         // porto elemento in pagina
         container.append(bigSquare);
+
+        // creo array con numeri delle bombe
+        const bombNumbers = createRandomNumArray(1, 100, 16);
+        console.log(bombNumbers);
 
         // creo caselle square
         // creo ciclo per le 100 caselle
@@ -73,3 +79,26 @@ function createElementWClass (tagName, className,) {
     return element
 }
 
+
+// funzione per array numeri casuali
+function createRandomNumArray (min, max, arrayLenght) {
+    
+    // creo array
+    const randomArray = [];
+
+    // creo ciclo per pushare i numeri
+    while (randomArray.length < arrayLenght) {
+
+        // creo numero random
+        let randomNum = Math.floor(Math.random() * (max - min +1)) + min;
+
+        // inserisco il numero nell'array se non già compreso
+        if (!randomArray.includes(randomNum)) {
+            randomArray.push(randomNum);
+        }
+    }
+
+    return randomArray
+}
+
+// devo generare 16 numeri casuali da uno a 100 e inserirli nella rispettiva casella 
